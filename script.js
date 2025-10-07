@@ -10,20 +10,15 @@ this.init();
 }
 
 init() {
-// Numbers
 document.querySelectorAll('.btn-number').forEach(btn => {
 btn.onclick = () => this.inputNumber(btn.dataset.number);
 });
-
-// Operations (+ - × ÷)
 document.querySelectorAll('.btn-operation').forEach(btn => {
 btn.onclick = () => {
 if (btn.dataset.operation) this.setOperation(btn.dataset.operation);
 else if (btn.dataset.action === 'equals') this.calculateResult();
 };
 });
-
-// Functions (C, ±, %, .)
 document.querySelectorAll('.btn-function').forEach(btn => {
 btn.onclick = () => this.handleFunction(btn.dataset.action);
 });
@@ -114,3 +109,4 @@ this.display.textContent = this.current;
 }
 
 const calculator = new Calculator();
+
