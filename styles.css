@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 360px;
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 12px;
+  border: 2px solid #333333;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.display {
+  height: 140px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 24px 16px;
+}
+
+.display-text {
+  color: #ffffff;
+  font-size: 78px;
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  height: 72px;
+  border: none;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.btn:active {
+  filter: brightness(0.9);
+}
+
+.btn-number,
+.btn-zero {
+  background-color: #505050;
+  color: #ffffff;
+}
+
+.btn-number:hover,
+.btn-zero:hover {
+  background-color: #676767;
+}
+
+.btn-function {
+  background-color: #a5a5a5;
+  color: #000000;
+}
+
+.btn-function:hover {
+  background-color: #bfbfbf;
+}
+
+.btn-operation {
+  background-color: #ff9f0a;
+  color: #ffffff;
+}
+
+.btn-operation:hover {
+  background-color: #ffb143;
+}
+
+.btn-operation.active {
+  background-color: #ffffff;
+  color: #ff9f0a;
+}
+
+.btn-zero {
+  grid-column: span 2;
+  border-radius: 40px;
+  text-align: left;
+  padding-left: 32px;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    max-width: 360px;
+  }
+}
